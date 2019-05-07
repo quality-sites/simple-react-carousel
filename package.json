@@ -1,17 +1,29 @@
 {
-  "name": "sapient-test",
+  "name": "simple-react-carousel",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.0.0-beta",
+    "json-server": "^0.14.2",
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "rss-parser": "^3.7.0",
+    "sass-rem": "^2.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start lint:css",
+    "build": "react-scripts build lint:css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json:server": "json-server --watch api.json --port 3004",
+    "lint:css": "stylelint \"src/**/*.scss\" --formatter verbose",
+    "stylelint": "^10.0.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.5.4"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +33,22 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "stylelint": {
+    "plugins": [
+      "stylelint-order",
+      "stylelint-scss"
+    ],
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": null,
+      "order/properties-alphabetical-order": true
+    }
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "regenerator-runtime": "^0.13.2"
+  }
 }

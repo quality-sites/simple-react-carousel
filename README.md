@@ -1,3 +1,28 @@
+# Simple React Carousel - Created By Niyazi Niyazi
+
+This is a simple responsive react carousel.
+
+## Future Improvements:
+
+Will be adding swipe events for tablets and mobile.
+
+## To run the app locally:
+
+```bash
+git clone https://github.com/quality-sites/simple-react-carousel.git
+cd simple-react-carousel
+npm install
+npm run json:server
+open http://localhost:3004/data
+open new terminal
+npm start
+open http://localhost:3000
+```
+
+[Demo](http://www.quality-sites.com/simple-react-carousel/)
+
+-----------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

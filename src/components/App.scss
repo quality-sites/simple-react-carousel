@@ -1,0 +1,92 @@
+@import "../sass/Variables";
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~sass-rem";
+
+.app {
+  @include rem(margin, 10px);
+
+  .header {
+    text-align: center;
+    @include rem(font-size, 20px);
+  }
+}
+
+/* Carousel */
+.carousel {
+  float: left;
+  height: 300px;
+  margin: 0 2.5%;
+  overflow: hidden;
+  position: relative;
+  width: 95%;
+
+  &__slides {
+    @include rem(height, 300px);
+    margin: 0 5%;
+    padding: 0;
+    position: absolute;
+    width: 90%;
+
+    &.active {
+      left: 0;
+    }
+
+    &.hidden {
+      left: -100%;
+    }
+  }
+
+  &__slide {
+    display: inline-block;
+    height: 100%;
+    list-style: none;
+  }
+
+  &__slide--content {
+    background-color: $color__brand--green;
+    height: 70%;
+    margin: 5%;
+    width: 90%;
+  }
+
+  &__slide--inner {
+    height: 90%;
+    padding: 5%;
+    width: 90%;
+  }
+
+  &__slide--description {
+    float: left;
+    position: relative;
+    @include rem(margin-top, 10px);
+  }
+
+  &__previous {
+    left: 24px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  &__next {
+    right: 24px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &__next,
+  &__previous {
+    @include rem(padding, 6px);
+    border: solid $color__brand--dark-grey;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    top: 35%;
+    
+    &:disabled {
+      font-weight: normal;
+    }
+  }
+}
